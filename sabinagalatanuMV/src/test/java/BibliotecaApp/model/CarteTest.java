@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class CarteTest {
     static Carte c0;
     Carte c1, c2, c3, c4;
@@ -46,6 +47,7 @@ class CarteTest {
 
 
     @Test
+    @Order(2)
     public void test_setTitlu1(){
 
             assertEquals("",c0.getTitlu());
@@ -71,9 +73,10 @@ class CarteTest {
         }
 
     @Test
+    @Order(1)
     public void test_setTitlu2(){
 
-        assertEquals("",c0.getTitlu());
+        assertEquals("Povesti",c0.getTitlu());
         assertEquals("",c1.getTitlu());
         assertEquals("Ion",c2.getTitlu());
         assertEquals("Poezii",c3.getTitlu());
